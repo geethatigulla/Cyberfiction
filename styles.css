@@ -1,24 +1,15 @@
-#team {
+body {
+    font-family: Arial, sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 2rem;
-  }
-  
-  .team-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  
-  .team {
-    margin: 20px;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .team h2 {
-    margin-top: 0;
-  }
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+canvas {
+    border: 1px solid #ccc;
+    background-color: #f0f0f0;
+}

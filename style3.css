@@ -1,0 +1,32 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f4f4f4;
+}
+
+.container {
+  text-align: center;
+}
+
+h1 {
+  color: #333;
+}
+
+#animation {
+  margin: 20px 0;
+}
+
+.step {
+  opacity: 0;
+  transition: opacity 1s ease;
+  font-size: 24px;
+  margin: 10px 0;
+}
+
+.step.active {
+  opacity: 1;
+}

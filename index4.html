@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ddos Animation</title>
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="style4.css">
+</head>
+<body>
+
+ 
+ <section class="home">
+     <div class="container">
+        <div class="row">
+            <div class="home-text">
+                 <h1>A Distributed Denial of Service (DDoS) attack occurs when multiple compromised systems,  often infected with malware, are controlled remotely by an attacker to flood a targeted system with traffic in an attempt to overwhelm its resources, making it unavailable to users.</h1>
+                 <p class="animate-text">
+                    <span>Know your network's traffic</span>
+                    <span>Create a Denial of Service Response Plan</span>
+                    <span>Make your network resilient</span>
+                    <span>Practice good cyber hygiene</span>
+                    <span>Take advantage of anti-DDoS hardware and software</span>
+                    <span>Know the symptoms of a DDoS attack</span>
+                    <span>Continuously monitor for unusual activity</span>
+                 </p>
+            </div>
+        </div>
+     </div>
+     
+ </section>
+
+ <div class="container">
+  <h1>DDoS Attack</h1>
+  <div class="traffic-flow">
+      <div class="normal-traffic" id="normalTraffic"></div>
+      <div class="attack-traffic" id="attackTraffic"></div>
+      <div class="server" id="server">Server</div>
+  </div>
+  <button id="startButton">Start DDoS Attack</button>
+
+
+
+<script>
+         const txts=document.querySelector(".animate-text").children,
+               txtsLen=txts.length;
+           let index=0;
+          const textInTimer=3000,
+                textOutTimer=2800;
+
+         function animateText() {
+            for(let i=0; i<txtsLen; i++){
+              txts[i].classList.remove("text-in","text-out");  
+            }
+            txts[index].classList.add("text-in");
+
+            setTimeout(function(){
+                txts[index].classList.add("text-out");              
+            },textOutTimer)
+
+            setTimeout(function(){
+
+              if(index == txtsLen-1){
+                  index=0;
+                }
+               else{
+                   index++;
+                 }
+                animateText();
+            },textInTimer); 
+         }
+         
+         window.onload=animateText;
+
+
+         // script.js
+document.getElementById('startButton').addEventListener('click', function() {
+    const normalTraffic = document.getElementById('normalTraffic');
+    const attackTraffic = document.getElementById('attackTraffic');
+    const server = document.getElementById('server');
+
+    // Simulate normal traffic
+    normalTraffic.style.height = '100%';
+
+    // Simulate DDoS attack
+    setTimeout(() => {
+        attackTraffic.style.height = '100%'; // Flood the server with attack traffic
+        normalTraffic.style.height = '50%'; // Reduce normal traffic
+        server.style.backgroundColor = 'red'; // Change server color to indicate overload
+    }, 2000); // Start attack after 2 seconds
+
+    // Simulate prevention strategies
+    setTimeout(() => {
+        attackTraffic.style.height = '0'; // Stop attack traffic
+        normalTraffic.style.height = '100%'; // Restore normal traffic
+        server.style.backgroundColor = 'green'; // Change server color back to normal
+    }, 5000); // End attack after 5 seconds
+});
+   
+</script>
+
+</body>
+</html>
+
+
+
+
